@@ -4,7 +4,6 @@ const port = process.env.port || 3000;
 const path = require("path");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const env = require('dotenv').config();
 const {sendMessage} = require('./twilio.js')
 
 app.use('/', express.static(path.join(__dirname, "../client/dist")));
@@ -14,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.post("/send", (req, res) => {
-  const {user, phone_number, plantName, confirmed, duration} = req.body;
-  return sendMessage(user, phone_number, plantName, confirmed, duration)
+  const {user, phoneNumber, plantName, confirmed, duration} = req.body;
+  return sendMessage(user, phoneNumber, plantName, confirmed, duration)
   .then(()=>{
     res.sendStatus(201)
   })
