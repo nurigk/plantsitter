@@ -90,7 +90,7 @@ class AddUser extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main-adduser">
         <form onSubmit={this.handleSubmitAddUser}>
           <label htmlFor="user">Your Name: </label>
           <input
@@ -129,9 +129,9 @@ class AddUser extends React.Component {
             <option value="week">Weekly</option>
             <option value="minute">Every Minute</option>
           </select>
-
           <input type="submit"></input>
-          <div>By submitting, you are agreeing to receive text messages!</div>
+          <br/> <br/>
+          <div>*By submitting, you are agreeing to receive text messages!</div>
         </form>
       </div>
     );

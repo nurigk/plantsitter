@@ -45,16 +45,16 @@ const CurrentUser = ({currentUser, setCurrentUser, users, setUsers, setView, set
 
 return(
 
-  <div>
+  <div className='main'>
     {currentUser.active ?
     <>
-    <div>Last watered:{moment().from(currentUser.lastwatered)}</div>
+    <h1>Last watered:{moment().from(currentUser.lastwatered)}</h1>
 
     <button onClick={()=>handleCancel(currentUser)}>Cancel Service</button>
     </>
     :
     <>
-    <div>You dont't have any subscriptions. Please select duration below to start!</div>
+    <h1>You don't have any subscriptions. Please select duration below to start!</h1>
 
     <label htmlFor='duration'>Select Duration: </label>
     <select name="duration" onChange={handleSelect}>

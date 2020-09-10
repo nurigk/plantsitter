@@ -2,11 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap');
 
 
-#title {
-  font-family: 'Londrina Outline', cursive;
-  font-size: 6em;
+.container{
+  margin-top: 5vh;
+  width: 80%;
+  height: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 6em 1fr;
+  padding: 10px;
+  overflow: auto;
+  max-height: 100vh;
+  text-align: center;
+  .title {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 5em;
+    grid-row: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+  }
+  .main {
+    padding: 5vh;
+    grid-row: 2;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .main-adduser {
+    padding: 5vh;
+    grid-row: 2;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: left;
+    margin: auto;
+  }
 }
 
-body {
-  font-family: 'Josefin Sans', sans-serif;
-}
