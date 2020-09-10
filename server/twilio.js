@@ -5,7 +5,7 @@ const client = require('twilio')(
   ck.TWILIO_ACCOUNT_SID,
   ck.TWILIO_AUTH_TOKEN
 );
-
+console.log(ck.TWILIO_AUTH_TOKEN)
 
 module.exports={
   sendMessage: (user, phoneNumber, plantName, confirmed, duration) => {
