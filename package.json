@@ -1,0 +1,51 @@
+{
+  "name": "plantsitter",
+  "version": "1.0.0",
+  "description": "App to help people take better care of their plants",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build-dev": "webpack -d --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurigk/plantsitter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nurigk/plantsitter/issues"
+  },
+  "homepage": "https://github.com/nurigk/plantsitter#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.1.0",
+    "image-webpack-loader": "^6.0.0",
+    "install": "^0.13.0",
+    "npm": "^6.14.8",
+    "twilio": "^3.49.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
