@@ -1,8 +1,9 @@
 // const {TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, MY_PHONE_NUMBER} = require('../config.js')
-const env = require('dotenv').config();
+const ck = require('ckey');
+// const env = require('dotenv').config();
 const client = require('twilio')(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
+  ck.TWILIO_ACCOUNT_SID,
+  ck.TWILIO_AUTH_TOKEN
 );
 
 
@@ -17,7 +18,7 @@ module.exports={
      return client.messages
       .create({
         to: phoneNumber,
-        from: process.env.TWILIO_PHONE_NUMBER,
+        from: ck.TWILIO_PHONE_NUMBER,
         body: textBody,
       })
       .then(message => console.log(message.sid));
