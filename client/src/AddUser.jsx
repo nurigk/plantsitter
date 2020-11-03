@@ -61,7 +61,6 @@ class AddUser extends React.Component {
 
   handleSelect(event) {
     event.preventDefault();
-    console.log(event.target.value);
     this.setState({
       duration: event.target.value,
     });

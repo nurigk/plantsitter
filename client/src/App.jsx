@@ -32,7 +32,6 @@ const App = () => {
   };
 
   const updateView = () => {
-    console.log(view);
     if (view === "enter") {
       return (
 
