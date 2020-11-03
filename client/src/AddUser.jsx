@@ -31,49 +31,28 @@ class AddUser extends React.Component {
       setCurrentUser,
       setView,
       currentUser,
-      setIntervals,
-      intervals
     } = this.props;
     event.preventDefault();
+    let time = Date.now()
     let phoneN = "+1" + this.state.phoneNumber;
     let newUser = {
       user: this.state.user,
       phoneNumber: phoneN,
       plantName: this.state.plantName,
-      confirmed: false,
       duration: this.state.duration,
       active: true,
-      lastWatered: moment().format(),
+      lastWatered: moment(time).format(),
     };
     setUsers([...users, newUser]);
     setCurrentUser(newUser);
-
     this.sendMessages(newUser);
-    newUser.confirmed = true;
-    if (newUser.duration === "minute") {
-      let setTimer = setInterval(() => this.sendMessages(newUser), 30000);
-      let newIntervals = [setTimer]
-      setIntervals(newIntervals)
-    }
-
     setView("currentUser");
   }
   sendMessages(currentUser) {
     return axios
       .post("/send", currentUser)
       .then(() => {
-        if (!currentUser.confirmed) {
-          let updateUser = Object.assign({}, currentUser);
-          updateUser.confirmed = true;
-          this.props.setCurrentUser(updateUser);
-          this.props.users.forEach((e, i) => {
-            if (e.user === updateUser.user) {
-              let newUsers = users.filter((e) => e.user !== updateUser.user);
-              newUsers.push(updateUser);
-              this.props.setUsers(newUsers);
-            }
-          });
-        }
+        console.log('Success!')
       })
       .catch((err) => {
         console.log(err);
@@ -125,7 +104,7 @@ class AddUser extends React.Component {
           <label htmlFor="duration">Select Duration: </label>
           <select name="duration" onChange={this.handleSelect}>
             <option value="month">Monthly</option>
-            <option value="other week">Bi-Monthly</option>
+            <option value="other-week">Bi-Monthly</option>
             <option value="week">Weekly</option>
             <option value="minute">Every Minute</option>
           </select>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import enter from "../dist/lib/enter.jpeg";
-import growme from "../dist/lib/grow_me.gif";
 import axios from "axios";
 import AddUser from "./AddUser.jsx";
 import CurrentUser from "./CurrentUser.jsx";
@@ -10,7 +9,6 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [users, setUsers] = useState([]);
   const [value, setValue] = useState("");
-  const [intervals, setIntervals] = useState(null);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -62,8 +60,6 @@ const App = () => {
           setCurrentUser={setCurrentUser}
           setView={setView}
           currentUser={currentUser}
-          intervals={intervals}
-          setIntervals={setIntervals}
         />
       );
     } else if (view === "addUser") {
@@ -74,8 +70,6 @@ const App = () => {
           setCurrentUser={setCurrentUser}
           setView={setView}
           currentUser={currentUser}
-          intervals={intervals}
-          setIntervals={setIntervals}
         />
       );
     }
